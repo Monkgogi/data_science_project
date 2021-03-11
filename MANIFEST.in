@@ -1,0 +1,4 @@
+# MANIFEST.in
+graft My_app/static
+graft My_app/templates
+global-exclude *.pyc
