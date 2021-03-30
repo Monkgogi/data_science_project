@@ -22,7 +22,7 @@ def create_app(config_classname):
     csrf.init_app(app)
 
     with app.app_context():
-        # Import Dash application
+        #Import Dash application
         from dash_app.dash import init_dashboard
         app = init_dashboard(app)
 
@@ -33,3 +33,4 @@ def create_app(config_classname):
     app.register_blueprint(community_bp)
 
     return app
+
