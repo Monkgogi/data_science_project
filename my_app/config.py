@@ -3,12 +3,15 @@ from pathlib import Path
 
 
 class Config(object):
-    ''' Sets the flask base configuration that is common to all the environments.'''
+    """ Sets the Flask base configuration that is common to all environments. """
     DEBUG = False
-    SECRET_KEY = '0qoEBdyfrssW-GwhhSVJtQ'
+    SECRET_KEY = 'q44II1qxOHIiuDobNoLLPQ'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     DATA_PATH = Path(__file__).parent.parent.joinpath("data")
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + str(DATA_PATH.joinpath('example.sqlite'))
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + str(DATA_PATH.joinpath('example.db'))
+    # UPLOADED_PHOTOS_DEST = Path(__file__).parent.joinpath("static").joinpath("img")
+    UPLOADED_PHOTOS_DEST = Path(__file__).parent.joinpath("static/img")
+
 
 class ProductionConfig(Config):
     ENV = 'production'
@@ -24,3 +27,4 @@ class TestingConfig(Config):
     ENV = 'testing'
     TESTING = True
     SQLALCHEMY_ECHO = True
+    WTF_CSRF_ENABLED = False
