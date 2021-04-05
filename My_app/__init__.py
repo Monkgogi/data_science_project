@@ -2,7 +2,7 @@ from flask import Flask
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import CSRFProtect
-from flask_Reuploaded import UploadSet, IMAGES, configure_uploads
+from flask_uploads import UploadSet, IMAGES, configure_uploads
 
 db = SQLAlchemy()
 login_manager = LoginManager()
@@ -46,5 +46,8 @@ def create_app(config_classname):
     app.register_blueprint(auth_bp)
 
     return app
+
+
+
 
 
