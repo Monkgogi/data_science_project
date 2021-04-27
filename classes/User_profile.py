@@ -21,5 +21,4 @@ class USERPROFILE:
         """ Enables the user to add a picture as their profile picture and be to
         edit it whenever they want """
 
-
 """This comment will show on Github"""
